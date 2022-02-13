@@ -1,3 +1,4 @@
+<!--https://meet.google.com/rsu-otrg-adm?authuser=0&hl=en_GB-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,10 +32,353 @@
 </style>
 </head>
 <body>
+  <script type="text/javascript">
+    let roomIn = 1;
+    let keys = 0;
+    /* dining room: key hidden in the chair*/
+    function checkKeys(){
+      if(keys === 4){
+        keys = 0;
+        alert("Congratulations! You escaped by collecting 4 keys. Click the dining room to play another round!");
+        
+      }
+    }
+    function game1(){
+      if (roomIn === 1){
+        answer = prompt("You are in the dining room. Move using the wasd keys or pick an object (chair, food, or table) to inspect to find the key.");
+        if (answer === "chair"){
+          confirm("You guessed right!");
+          riddleans = prompt("Now answer a riddle to get the key: What goes up but never comes down?");
+          for (let i = 0; i<3; i++){
+            if (riddleans === "age"){
+            keys+=1;
+            alert("Congrats! You earned a key! You now have " + keys + " key(s)");
+            checkKeys();
+            game1();
+            return;
+            } else{
+              riddleans = prompt("Now answer a riddle to get the key: What can you break, even if you never pick it up or touch it?");
+            }
+          } 
+          game1();
+        } else if (answer === "w"){
+            roomIn = 2;
+            alert("You have moved to the living room.");
+            game2();
+        } else if (answer === "a") {
+            roomIn = 5;
+            alert("You have moved to the study.");
+            game5();
+        } else if (answer === "s") {
+            roomIn = 3;
+            alert("You have moved to the kitchen.");
+            game3();
+        } else if (answer === "d") {
+            roomIn = 4;
+            alert("You have moved to the bedroom.");
+            game4();
+        } else if (answer === "table" || "food") {
+            alert("No key hidden here. Try again.");
+            game1();
+        } else{
+          confirm("Invalid entry, try again!");
+          game1();
+        }
+      }
+    }
+  /* living room: no key hidden here */
+  function game2(){
+      if (roomIn === 2){
+        answer = prompt("You are in the living room. Move using the wasd keys or pick an object (sofa, pillow) to inspect to find the key.");
+        if (answer === "sofa"){
+          confirm("You guessed right!");
+          riddleans = prompt("Now answer a riddle to get the key: What can you break, even if you never pick it up or touch it?");
+          for (let i = 0; i<3; i++){
+            if (riddleans === "promise"){
+            keys+=1;
+            alert("Congrats! You earned a key! You now have " + keys + " key(s)");
+            /*checkKeys();*/
+            game2();
+            return;
+            } else{
+              riddleans = prompt("Now answer a riddle to get the key: What can you break, even if you never pick it up or touch it?");
+            }
+          } 
+          game2();
+        } else if (answer === "w"){
+            roomIn = 8;
+            alert("You have moved to the tea parlor.");
+            game8();
+        } else if (answer === "a") {
+            roomIn = 7;
+            alert("You have moved to the garage.");
+            game7();
+        } else if (answer === "s") {
+            roomIn = 1;
+            alert("You have moved to the dining room.");
+            game1();
+        } else if (answer === "d") {
+            roomIn = 6;
+            alert("You have moved to the game room.");
+            game6();
+        } else if (answer === "pillow") {
+            alert("No key hidden here. Try again.");
+            game2();
+          } else{
+          console.log(answer);
+          confirm("Invalid entry, try again!");
+          game2();
+        } 
+      }
+    }
+    function game3(){
+      if (roomIn === 3){
+        answer = prompt("You are in the kitchen. Move using the wasd keys or pick an object (countertop, cabinet, or fridge) to inspect to find the key.");
+        if (answer === "fridge"){
+          confirm("You guessed right!");
+          riddleans = prompt("Now answer a riddle to get the key: What has 88 keys but can't open a door?");
+          for (let i = 0; i<3; i++){
+            if (riddleans === "piano"){
+            keys+=1;
+            alert("Congrats! You earned a key! You now have " + keys + " key(s)");
+            checkKeys();
+            game3();
+            return;
+            } else{
+              riddleans = prompt("Now answer a riddle to get the key: What has 88 keys but can't open a door?");
+            }
+          }
+          game3();
+        } else if (answer === "w"){
+            roomIn = 1;
+            alert("You have moved to the dining room.");
+            game1();
+        } else if (answer === "a") {
+            alert("You have reached the boundries and cannot move in this direction.");
+            game3();
+        } else if (answer === "s") {
+            alert("You have reached the boundries and cannot move in this direction.");
+            game3();
+        } else if (answer === "d") {
+            alert("You have reached the boundries and cannot move in this direction.");
+            game3();
+        } else if (answer === "cabinet" || "countertop") {
+            alert("No key hidden here. Try again.");
+            game3();
+        } else{
+          confirm("Invalid entry, try again!");
+          game3();
+        }
+      }
+    }
+    function game4(){
+      if (roomIn === 4){
+        answer = prompt("You are in the bedroom. Move using the wasd keys or pick an object (bed, lamp, or closet) to inspect to find the key.");
+        if (answer === "bed"){
+          confirm("You guessed right!");
+          riddleans = prompt("Now answer a riddle to get the key: What has an eye but can't see?");
+          for (let i = 0; i<3; i++){
+            if (riddleans === "needle"){
+            keys+=1;
+            alert("Congrats! You earned a key! You now have " + keys + " key(s)");
+            checkKeys();
+            game4();
+            return;
+            } else{
+              riddleans = prompt("Now answer a riddle to get the key: What has an eye but can't see?");
+            }
+          }
+          game4();
+        } else if (answer === "w"){
+            roomIn = 6;
+            alert("You have moved to the game room.");
+            game6();
+        } else if (answer === "a") {
+            roomIn = 1;
+            alert("You have moved to the dining room.");
+            game1();
+        } else if (answer === "s") {
+            alert("You have reached the boundries and cannot move in this direction.");
+            game4();
+        } else if (answer === "d") {
+            alert("You have reached the boundries and cannot move in this direction.");
+            game4();
+        } else if (answer === "lamp" || "closet"){
+          alert("No key hidden here. Try again.");
+            game4();
+        } else{
+          confirm("Invalid entry, try again!");
+          game4();
+        }
+      }
+    }
+    function game5(){
+      if (roomIn === 5){
+        answer = prompt("You are in the study. Move using the wasd keys or pick an object (laptop and book) to inspect to find the key.");
+        if(answer === "laptop"){
+          confirm("You guessed right!");
+          riddleans = prompt("Now answer a riddle to get the key: What has a key but no lock?");
+          for (let i = 0; i<3; i++){
+            if (riddleans === "keyboard"){
+            keys+=1;
+            alert("Congrats! You earned a key! You now have " + keys + " key(s)");
+            checkKeys();
+            game5();
+            return;
+            } else{
+              riddleans = prompt("Now answer a riddle to get the key: What has a key but no lock?");
+            }
+          }
+          game5();
+        } else if (answer === "w"){
+            alert("You have reached the boundries and cannot move in this direction.");
+            game5();
+        } else if (answer === "a") {
+            alert("You have reached the boundries and cannot move in this direction.");
+            game5();
+        } else if (answer === "s") {
+            alert("You have reached the boundries and cannot move in this direction.");
+            game5();
+        } else if (answer === "d") {
+            roomIn = 1;
+            alert("You have moved to the dining room.");
+            game1();
+        } else if (answer === "book") {
+            alert("No key hidden here. Try again.");
+            game5();
+        } else{
+          confirm("Invalid entry, try again!");
+          game5();
+        }
+      }
+    }
+    function game6(){ 
+      if (roomIn === 6){
+        answer = prompt("You are in the game room. Move using the wasd keys or pick an object (console and tv) to inspect to find the key.");
+        if(answer ===  "tv"){
+            confirm("You guessed right!.");
+            riddleans = prompt("What kind of vegetables are the most fun at parties?");
+          for (let i = 0; i<3; i++){
+            if (riddleans == "fungi"){
+            keys+=1;
+            alert("Congrats! You earned a key! You now have " + keys + " key(s)");
+            checkKeys();
+            game6();
+            return;
+            } else{
+              riddleans = prompt("What kind of vegetables are the most fun at parties?");
+            }
+          }
+          game6();
+        } else if (answer === "w"){
+            alert("You have reached the boundaries and cannot move in this direction.");
+            game6();
+        } else if (answer === "a") {
+            roomIn = 2;
+            alert("You have moved to the sitting room.");
+            game2();
+        } else if (answer === "s") {
+            roomIn = 4
+            alert("You have moved to the bedroom.");
+            game4();
+        } else if (answer === "d") {
+            alert("You have reached the boundaries and cannot move in this direction.");
+            game6();
+        } else if (answer === "console"){
+            alert("No key hidden here. Try again.");
+            game6();
+        } else{
+          confirm("Invalid entry, try again!");
+          game6();
+        }
+      }
+    }
+    function game7(){
+      if (roomIn === 7){
+        answer = prompt("You are in the garage. Move using the wasd keys or pick an object (pink car or blue car) to inspect to find the key.");
+        if (answer === "pink car"){
+          confirm("You guessed right!");
+          riddleans = prompt("Now answer a riddle to get the key: What starts with a T, ends with a T, and has T in it?");
+          for (let i = 0; i<3; i++){
+            if (riddleans == "teapot"){
+            keys+=1;
+            alert("Congrats! You earned a key! You now have " + keys + " key(s)");
+            checkKeys();
+            game7();
+            return;
+            } else{
+              riddleans = prompt("Now answer a riddle to get the key: What starts with a T, ends with a T, and has T in it?");
+            }
+          }
+          game7();
+        } else if (answer === "w"){
+            alert("You have reached the boundaries and cannot move in this direction.");
+            game7();
+        } else if (answer === "a") {
+            alert("You have reached the boundaries and cannot move in this direction.");
+            game7();
+        } else if (answer === "s") {
+            roomIn = 5;
+            alert("You have moved to the study.");
+            game5();
+        } else if (answer === "d") {
+            roomIn = 2;
+            alert("You have moved to the sitting room.");
+            game2();
+        } else if (answer === "blue car") {
+            alert("No key hidden here. Try again.");
+            game7();
+        } else{
+          confirm("Invalid entry, try again!");
+          game7();
+        }
+      }
+    }
+    function game8(){ 
+      if (roomIn === 8){
+        answer = prompt("You are in the tea parlor. Move using the wasd keys or pick an object (cookie, teapot) to inspect to find the key.")
+        if (answer === "teapot"){
+          confirm("You guessed right!");
+          riddleans = prompt("Now answer a riddle to get the key: What has a ring but no finger?");
+          for (let i = 0; i<3; i++){
+            if (riddleans === "phone"){
+            keys+=1;
+            alert("Congrats! You earned a key! You now have " + keys + " key(s)");
+            checkKeys();
+            game8();
+            return;
+            } else{
+              riddleans = prompt("Now answer a riddle to get the key: What has a ring but no finger?");
+            }
+          }
+          game8();
+        } else if (answer === "w"){
+            alert("You have reached the boundaries and cannot move in this direction.");
+            game8();
+        } else if (answer === "a") {
+            alert("You have reached the boundaries and cannot move in this direction.");
+            game8();
+        } else if (answer === "s") {
+            roomIn = 2
+            alert("You have moved to the living room.");
+            game2();
+        } else if (answer === "d") {
+            alert("You have reached the boundaries and cannot move in this direction.");
+            game8();
+        } else if (answer === "cookie") {
+            alert("No key hidden here. Try again.");
+            game8();
+        } else{
+          confirm("Invalid entry, try again!");
+          game8();
+        }
+      }
+    }
+  </script>
   <!--<p style= "margin-left: 50px">this is the game page</p>
   <img src="../static/images/living.png" alt="Living room">-->
   <div style="margin-left: 50px; margin-right: 50px;" class="box">
-    <p>Welcome to gaming4good. If you are seeing this message, you have been trapped in a mysterious mansion which you must escape in order to expose the real secret behind the mansion's creation. Solve puzzles to gain access to every room in the mansion, and don't forget to thoroughly check every room in case the exit door in located there.</p>
+    <p>Welcome to gaming4good. If you are seeing this message, you have been trapped in a mysterious mansion which you must escape in order to survive. Solve puzzles to gain access to every room in the mansion, and don't forget to thoroughly check every room in case the exit door in located there. Click somewhere on the dining room to start.</p>
   </div>
   <table style="margin-bottom: 100px; margin-top: 100px; margin-left:auto; margin-right: auto">
     <tr>
@@ -49,7 +393,7 @@
     </tr>
     <tr>
       <td><img class="image" src="../static/images/study.png" alt="Study room"></td>
-      <td><img class="image" src="../static/images/dining.png" alt="Dining room"></td>
+      <td onclick="game1()"><img class="image" src="../static/images/dining.png" alt="Dining room"></td>
       <td><img class="image" src="../static/images/bedroom.png" alt="Bedroom"></td>
     </tr>
     <tr>
@@ -58,5 +402,6 @@
       <td></td>
     </tr>
   </table>
+  <!--<script>setTimeout(() => game1(), 0);</script>-->
 </body>
 </html>
