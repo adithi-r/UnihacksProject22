@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script type="text/javascript">
+      let roomIn = 0;
+
+      function displayAlert() {
+        alert("test");
+      }
+
+      function askQuestion() {
+        const answer = prompt("What is 2+2");
+        if (answer === "4" && roomIn === 0) {
+          roomIn = 1;
+          updateRoom();
+          alert("Congrats, you have moved to room 1");
+        } else {
+          alert("Sorry, not allowed");
+        }
+      }
+
+      function moveDirection(direction) {
+        alert("You are moving: " + direction);
+      }
+
+      function updateRoom() {
+        document.getElementById("room-number").innerText = roomIn;
+      }
+
+      // You can use DOM (Document Object Model)
+    </script>
+    <div>Current room: <span id="room-number"></span></div>
+    <button type="button" onclick="askQuestion()">Click me</button>
+    <button type="button" onclick="moveDirection('N')">N</button>
+    <button type="button" onclick="moveDirection('S')">S</button>
+    <button type="button" onclick="moveDirection('W')">W</button>
+    <button type="button" onclick="moveDirection('E')">E</button>
+
+    <script type="text/javascript">
+      updateRoom();
+    </script>
+  </body>
+</html>

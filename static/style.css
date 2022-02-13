@@ -1,0 +1,27 @@
+.box {
+    background-color: #f0fdff;
+    box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+    border-radius: 4px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif !important;
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif !important;
+}
+
+.image{
+  height:300px;
+  width: 300px;
+}

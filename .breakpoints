@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.py": [
+      {
+        "id": "eedb1f68-835f-4532-9724-b7f125443595",
+        "line": 19,
+        "version": 1156,
+        "index": 350
+      }
+    ],
+    "templates/game.html": [
+      {
+        "id": "e96b1a12-5feb-4ecd-adb0-d7b1b3e5ac2f",
+        "line": 40,
+        "version": 472,
+        "index": 1168
+      }
+    ]
+  }
+}
