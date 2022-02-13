@@ -1,39 +1,41 @@
 <!--https://meet.google.com/rsu-otrg-adm?authuser=0&hl=en_GB-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game | Gaming4Good</title>
-  <!-- stylesheets -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/style.css">
-  <!-- Google Fonts API -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto:wght@300&display=swap" rel="stylesheet">
-  <!-- bootstrap navbar -->
-  <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">Gaming4Good</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="/">Home</a></li>
-      <li class="active"><a href="/game">Game</a></li>
-      <li><a href="/about">About Us</a></li>
-    </ul>
-  </div>
-</nav>
-<style>
-  td{
-    width: 33.33%
-  }
-</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Game | Gaming4Good</title>
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/style.css">
+	<!-- Google Fonts API -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<!-- bootstrap navbar -->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Gaming4Good</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="/">Home</a></li>
+				<li class="active"><a href="/game">Game</a></li>
+				<li><a href="/about">About Us</a></li>
+			</ul>
+		</div>
+	</nav>
+	<style>
+		td {
+			width: 33.33%
+		}
+	</style>
 </head>
+
 <body>
-  <script type="text/javascript">
-    let roomIn = 1;
+	<script type="text/javascript">
+		let roomIn = 1;
     let keys = 0;
     /* dining room: key hidden in the chair*/
     function checkKeys(){
@@ -77,10 +79,10 @@
             roomIn = 4;
             alert("You have moved to the bedroom.");
             game4();
-        } else if (answer === "table" || "food") {
+        } else if (answer === "table" || answer === "food") {
             alert("No key hidden here. Try again.");
             game1();
-        } else{
+        } else {
           confirm("Invalid entry, try again!");
           game1();
         }
@@ -125,7 +127,6 @@
             alert("No key hidden here. Try again.");
             game2();
           } else{
-          console.log(answer);
           confirm("Invalid entry, try again!");
           game2();
         } 
@@ -162,7 +163,7 @@
         } else if (answer === "d") {
             alert("You have reached the boundries and cannot move in this direction.");
             game3();
-        } else if (answer === "cabinet" || "countertop") {
+        } else if (answer === "cabinet" || answer === "countertop") {
             alert("No key hidden here. Try again.");
             game3();
         } else{
@@ -203,7 +204,7 @@
         } else if (answer === "d") {
             alert("You have reached the boundries and cannot move in this direction.");
             game4();
-        } else if (answer === "lamp" || "closet"){
+        } else if (answer === "lamp" || answer === "closet"){
           alert("No key hidden here. Try again.");
             game4();
         } else{
@@ -374,16 +375,18 @@
         }
       }
     }
-  </script>
-  <!--<p style= "margin-left: 50px">this is the game page</p>
+	</script>
+	<!--<p style= "margin-left: 50px">this is the game page</p>
   <img src="../static/images/living.png" alt="Living room">-->
-  <div style="margin-left: 50px; margin-right: 50px;" class="box">
-    <p>Welcome to gaming4good. If you are seeing this message, you have been trapped in a mysterious mansion which you must escape in order to survive. Solve puzzles to gain access to every room in the mansion, and don't forget to thoroughly check every room in case the exit door in located there. Click somewhere on the dining room to start.</p>
-  </div>
-  <table style="margin-bottom: 100px; margin-top: 100px; margin-left:auto; margin-right: auto">
-    <tr>
-      <td></td>
-      <td><img class="image" src="../static/images/tea.png" alt="Tea parlor"></td>
+	<div style="margin-left: 50px; margin-right: 50px;" class="box">
+		<p>Welcome to gaming4good. If you are seeing this message, you have been trapped in a mysterious mansion which you must
+			escape in order to survive. Solve puzzles to gain access to every room in the mansion, and don't forget to thoroughly
+			check every room in case the exit door in located there. Click somewhere on the dining room to start.</p>
+	</div>
+	<table style="margin-bottom: 100px; margin-top: 100px; margin-left:auto; margin-right: auto">
+		<tr>
+			<td></td>
+			<td><img class="image" src="../static/images/tea.png" alt="Tea parlor"></td>
       <td></td>
     </tr>
     <tr>
